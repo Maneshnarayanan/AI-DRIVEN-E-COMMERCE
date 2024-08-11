@@ -28,6 +28,9 @@ body {
   display: flex;
   flex-direction: column;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+      
+      
 }
 
 .hidden {
@@ -36,13 +39,14 @@ body {
 
 .header {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color:#3167eb;;
   color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .header h1 {
@@ -64,9 +68,30 @@ body {
 }
 
 .body {
-  padding: 10px;
-  overflow-y: auto;
-  flex-grow: 1;
+  display: flex;
+      flex: 1;
+      color: white;
+     
+      backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+
+/* From https://css.glass */
+background: rgba(37, 113, 220, 0.23);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+
+
+      margin-top: auto;
+      overflow-y: scroll;
+      flex-direction: column-reverse;
+      scroll-behavior: smooth;
+      padding: 20px 10px;
+      border-radius: 5px 5px 0px 0px;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
 }
 
 .bot_message, .user_message {
@@ -77,27 +102,46 @@ body {
 }
 
 .bot_message {
-  background-color: #e1f0d1;
-  color: #333;
+  background-color: dodgerblue;
+      padding: 10px;
+      color: white;
+      width: fit-content;
+      border-top-left-radius: 0px !important;
+      border-radius: 10px;
+      margin-bottom: 15px;
 }
 
 .user_message {
-  background-color: #0084FF;
-  color: white;
-  align-self: flex-end;
+  margin-left: auto;
+      background-color: white;
+      color: black;
+      padding: 10px;
+      width: fit-content;
+      border-top-right-radius: 0px !important;
+      border-radius: 10px;
+      margin-bottom: 15px;
 }
+.bot-message-block {
+      display: flex;
+      align-items: baseline;
+    }
 
-.bot-message-block, .user-message-block {
-  display: flex;
-  align-items: center;
-}
+    .user-message-block {
+      display: flex;
+      align-items: baseline;
+      flex-direction: row-reverse;
+    }
 
-.bot-profile, .user-profile {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
+.bot-profile {
+      width: 13%;
+      padding-right: 5px;
+    }
+
+    .user-profile {
+      width: 12%;
+      padding-left: 5px;
+    }
+
 
 .footer {
   padding: 10px;
@@ -134,12 +178,18 @@ body {
 
 /* Bot Typing Animation */
 .botTyping-bg {
-  padding: 10px;
-  text-align: center;
+  background: rgba(37, 113, 220, 0.23);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+
+  padding: 0px 0px 10px 20px;
 }
 
 .botTyping {
-  display: inline-block;
+  margin-right: 60%;
+      color: #fff;
 }
 
 .botTyping .circle {
@@ -311,6 +361,8 @@ body {
       z-index: var(--chatBot_ZIndex);
     }
   </style>
+  <button id="showBotbtn" class="showBot fade-in-transition" type="button" onclick="showBotFun()"><img height="60px" src="{% static 'chatbot_project/images/bot.gif' %}"></button>
+
 
   <div id="botWindow" class="container1 fade-in-transition hidden">
     <div class="header">
@@ -337,7 +389,7 @@ body {
       </div>
     </div>
     {%csrf_token%}
-    <form id="myForm" value="query">
+    <form id="myForm" value="query" autocomplete="off">
       <div class="footer">
         <input id="query" type="text" onkeyup="checkText()" placeholder="Type..." name="query">
         <button class="submit_btn" type="submit"> Send</button>
@@ -352,10 +404,9 @@ body {
       
     </div>
     <div class="attention"></div>
-    <div class="down-triangle"></div>
+    
   </div>
-  <button id="showBotbtn" class="showBot fade-in-transition" type="button" onclick="showBotFun()"><img height="60px" src="{% static 'chatbot_project/images/bot.gif' %}"></button>
-
+  
   <!-- ajax string -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
