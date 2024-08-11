@@ -55,7 +55,7 @@ def register(request):
     return render(request, 'accounts/register.html', context)
 
 
-def login(request):
+def login1(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
@@ -118,15 +118,15 @@ def login(request):
                 return redirect('dashboard')
         else:
             messages.error(request, 'Invalid credentials')
-            return redirect('login')
+            return redirect('login1')
     return render(request, 'accounts/login.html')
 
 
-@login_required(login_url='login')
+@login_required(login_url='login1')
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout successful.')
-    return redirect('login')
+    return redirect('login1')
 
 
 def activate(request, uidb64, token):
@@ -140,13 +140,13 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
         messages.success(request, 'Congratulations! Your account has been activated successfully.')
-        return redirect('login')
+        return redirect('login1')
     else:
         messages.error(request, 'This link has been expired or is invalid.')
         return redirect('register')
     
 
-@login_required(login_url='login')
+@login_required(login_url='login1')
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
 
@@ -171,7 +171,7 @@ def forgotPassword(request):
             send_mail.send()
 
             messages.success(request, 'Password reset email has been sent to your email address.')
-            return redirect('login')
+            return redirect('login1')
 
         else:
             messages.error(request, 'Email does not exist.')
@@ -192,7 +192,7 @@ def resetpassword_validate(request, uidb64, token):
         return redirect('resetPassword')
     else:
         messages.error(request, 'This link has been expired or is invalid.')
-        return redirect('login')
+        return redirect('login1')
     
 
 def resetPassword(request):
@@ -205,7 +205,7 @@ def resetPassword(request):
             user.set_password(password)
             user.save()
             messages.success(request, 'Password reset successful.')
-            return redirect('login')
+            return redirect('login1')
         else:
             messages.error(request, 'Passwords do not match.')
             return redirect('resetPassword')

@@ -26,4 +26,9 @@ urlpatterns = [
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('chat/', include(('aichat.urls','aichat'),namespace = 'chatbot_project')),
+    path('home/', include(('aichat.urls','aichat'),namespace = 'chatbot_project2')),
+    
+    
+    
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

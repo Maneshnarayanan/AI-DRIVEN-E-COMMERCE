@@ -39,6 +39,7 @@
         });
         // jquery end
     </script>
+    
 
 </head>
 
@@ -46,13 +47,20 @@
 
     <!-- navbar -->
     {% include 'includes/navbar.html' %}
+    
 
     {% block content %}
     <!-- content -->
     {% endblock %}
+ 
+    <!-- aichat -->
+    {% include 'includes/chatbot.html' %}
+   
 
+    
     <!-- footer -->
     {% include 'includes/footer.html' %}
+        
 
 </body>
 </html>
