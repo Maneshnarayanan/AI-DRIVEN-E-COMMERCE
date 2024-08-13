@@ -12,8 +12,8 @@
         "hey"
       ],
       "responses": [
-        "Hello! How can I help you today?",
-        "Hello :)"
+        "Hello! here our new items please check it <a> link</a>"
+       
       ]
 
     },
@@ -121,15 +121,14 @@
       ]
     },
     {
-      "tag": "placement",
+      "tag": "products",
       "patterns": [
-        "what is the placement process?",
-        "which companies comes to college?",
-        "how to seat for on campus placement?",
-        "college placement reviews ? "
+        "products?",
+        "new products",
+        "products"
       ],
       "responses": [
-        "Contact Collage Placement Cell"
+        "check our products <a href=''>link</a>"
       ]
     },
     {
