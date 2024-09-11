@@ -12,10 +12,8 @@
         "hey"
       ],
       "responses": [
-        "Hello! here our new items please check it <a> link</a>"
-       
+        "Hello! Welcome to GrabDeal! Check out our latest deals <a href='#'>here</a>."
       ]
-
     },
     {
       "tag":"greetings2",
@@ -26,9 +24,9 @@
         "hello how are you?"
       ],
       "responses": [
-        "I'm fine what about you?",
-        "Thanks for asking! I'm excellent. How about you?",
-        "Fine, thanks. What do you got for me today?"
+        "I'm great, thanks for asking! How can I assist you today?",
+        "Doing well! How about you? Ready to find some great deals?",
+        "I'm fine, thank you! Looking for something specific today?"
       ]
     },
     {
@@ -39,7 +37,7 @@
         "who are you?"
       ],
       "responses": [
-        "I'm a AI and I'm here to help you out ;)"
+        "I'm your shopping assistant from GrabDeal, here to help you find the best offers!"
       ]
     },
     {
@@ -49,75 +47,7 @@
         "help!"
       ],
       "responses":[
-        "Ok, you can ask me about:<br> our new products <br> "
-      ]
-    },
-    {
-      "tag": "admission-degree",
-      "patterns": [
-        "what is the admission process for degree?",
-        "how to take admission for degree?",
-        "i want to take admission for degree"
-      ],
-      "responses": [
-        "https://kirticollege.edu.in/category/degree-admission-notices/"
-      ]
-    },
-    {
-      "tag": "admission-pg",
-      "patterns": [
-        "what is the admission process for PG?",
-        "how to take admission for Post?",
-        "i want to take admission for PG"
-      ],
-      "responses": [
-        "https://kirticollege.edu.in/category/post-graduation-notices/"
-      ]
-    },
-    {
-      "tag": "admission-junior",
-      "patterns": [
-        "what is the admission process for junior?",
-        "how to take admission for junior?",
-        "i want to take admission for junior"
-      ],
-      "responses": [
-        "https://kirticollege.edu.in/#"
-      ]
-    },
-    {
-      "tag": "services",
-      "patterns": [
-        "what is the college number?",
-        "what is the college staff number?",
-        "what is the college contact?",
-        "what is the contact details?",
-        "how to contact college?"
-      ],
-      "responses": [
-        "https://kirticollege.edu.in/contact-us/"
-      ]
-    },
-    {
-      "tag": "sport",
-      "patterns": [
-        "is sports available in college?",
-        "is NCC available in college?",
-        "is NSS available in college?",
-        "what extra curricular activities are there in college?"
-      ],
-      "responses": [
-        "Please contact college"
-      ]
-    },
-    {
-      "tag": "exam",
-      "patterns": [
-        "when is my exam?",
-        "give me exam details"
-      ],
-      "responses": [
-        "https://livestudent.deccansociety.org/"
+        "Sure! You can ask me about our new arrivals, ongoing sales, or any specific product you're looking for."
       ]
     },
     {
@@ -125,24 +55,130 @@
       "patterns": [
         "products?",
         "new products",
-        "products"
+        "what products do you have?",
+        "what are your latest products?",
+        "show me your products",
+        "can I see your products?",
+        "what's in store?"
       ],
       "responses": [
-        "check our products <a href=''>link</a>"
+        "Check out our latest products and offers <a href='#'>here</a>."
+      ]
+    },
+    {
+      "tag": "new-arrivals",
+      "patterns": [
+        "new arrivals?",
+        "what's new?",
+        "latest collection",
+        "new items",
+        "show me new arrivals",
+        "any new products?",
+        "new collection"
+      ],
+      "responses": [
+        "We have some exciting new arrivals! You can explore them <a href='#'>here</a>."
+      ]
+    },
+    {
+      "tag": "specific-products",
+      "patterns": [
+        "do you have pants?",
+        "show me pants",
+        "what pants do you have?",
+        "do you have shirts?",
+        "show me shirts",
+        "what shirts do you have?",
+        "looking for pants",
+        "looking for shirts",
+        "any new pants?",
+        "any new shirts?",
+        "I need pants",
+        "I need shirts"
+      ],
+      "responses": [
+        "We have a great selection of pants! Check them out <a href='/store' >here</a>.",
+        "You can browse our collection of shirts  <a href='/store' >Store</a>."
+      ]
+    },
+    {
+      "tag": "order-status",
+      "patterns": [
+        "where is my order?",
+        "order status",
+        "track my order",
+        "where is my package?",
+        "order tracking"
+      ],
+      "responses": [
+        "You can track your order status <a href='#'>here</a>. Just enter your order number."
+      ]
+    },
+    {
+      "tag": "return-policy",
+      "patterns": [
+        "what is the return policy?",
+        "how do I return a product?",
+        "can I return a product?",
+        "how to return?",
+        "return process"
+      ],
+      "responses": [
+        "You can find all the details about our return policy <a href='#'>here</a>."
+      ]
+    },
+    {
+      "tag": "shipping-info",
+      "patterns": [
+        "what is the shipping time?",
+        "how long does shipping take?",
+        "shipping details",
+        "shipping information",
+        "how soon will my order arrive?"
+      ],
+      "responses": [
+        "Shipping times and details can be found <a href='#'>here</a>."
+      ]
+    },
+    {
+      "tag": "payment-options",
+      "patterns": [
+        "what payment methods do you accept?",
+        "how can I pay?",
+        "payment options",
+        "what are the payment options?",
+        "ways to pay"
+      ],
+      "responses": [
+        "We accept various payment methods including credit/debit cards, PayPal, and more. You can view all options <a href='#'>here</a>."
+      ]
+    },
+    {
+      "tag": "offers",
+      "patterns": [
+        "any offers?",
+        "current deals",
+        "ongoing promotions",
+        "discounts",
+        "sales"
+      ],
+      "responses": [
+        "Yes! Check out our current offers <a href='#'>here</a>."
       ]
     },
     {
       "tag": "goodbye",
       "patterns": [
-        "good Bye ",
-        "see You later",
+        "goodbye",
+        "see you later",
         "till next time",
-        "meet you later"
+        "meet you later",
+        "bye"
       ],
       "responses": [
-        "See you, Have a nice day :)",
-        "Bye,Come back soon! ",
-        "Thanks For Asking! "
+        "Thanks for visiting GrabDeal! See you next time!",
+        "Goodbye! Hope to see you again soon at GrabDeal!",
+        "Take care! Don't forget to check back for new deals!"
       ]
     },
     {
@@ -152,11 +188,32 @@
         "how",
         "when",
         "I",
-        "you"
+        "you",
+        "what",
+        "where"
       ],
       "responses": [
-        "Hey there!, I'm still learning stuff can you please elaborate it?",
-        "You know, according to my lawyer, I don't have to answer that."
+        "I'm here to help with your shopping needs! Could you please clarify your question?",
+        "Sorry, I didn't catch that. Could you please provide more details?"
+      ]
+    }
+    ,
+    {
+      "tag": "math_operation",
+      "patterns": [
+        "calculate",
+        "+",
+        "-",
+        "*",
+        "/",
+        "sum",
+        "what is",
+        "what's"
+      ],
+      "responses": [
+        "Sure, I can help with that! Please provide the numbers.",
+        "Let's do some math! What numbers would you like to operate on?",
+        "I'm ready to calculate! Please tell me the operation."
       ]
     }
   ]
